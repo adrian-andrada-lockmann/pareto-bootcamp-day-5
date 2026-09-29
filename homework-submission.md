@@ -5,7 +5,8 @@
 **Page:** 20-Hour Owner  
 **Founder:** Kasim Aslam  
 **Deliverable:** Responsive landing-page concept  
-**Primary action:** Apply for one of 10 founding-cohort seats
+**Primary action:** Apply for one of 10 founding-cohort seats  
+**Public preview:** https://adrian-andrada-lockmann.github.io/pareto-bootcamp-day-5/
 
 This is a concept developed for the Pareto Bootcamp. It is not a live or founder-approved offer.
 
@@ -274,6 +275,6 @@ Avoid: caricature, waxy skin, short hair, beard, mismatched head size, duplicate
 - [x] At least eight sections.
 - [x] Responsive layout and working mobile navigation.
 - [x] Working local application-form interaction.
-- [ ] Replace the local preview with a public deployment URL.
+- [x] Public GitHub Pages deployment verified on desktop and mobile.
 - [ ] Obtain founder approval for claims, terms, price, and guarantee.
 - [ ] Connect the form to an approved application endpoint.
