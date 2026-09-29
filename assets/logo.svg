@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 64" role="img" aria-labelledby="title desc">
+  <title id="title">20-Hour Owner</title>
+  <desc id="desc">A forward-moving geometric mark beside the words 20-Hour Owner.</desc>
+  <g fill="none" fill-rule="evenodd">
+    <path fill="#1D4ED8" d="M4 10h22c12.15 0 22 9.85 22 22s-9.85 22-22 22H4V42h22c5.52 0 10-4.48 10-10s-4.48-10-10-10H4V10Z"/>
+    <path fill="#111827" d="M24 10h12v44H24z"/>
+    <path fill="#FF5A4E" d="M46 10h12v12H46z"/>
+    <text x="76" y="31" fill="#111827" font-family="Space Grotesk, Arial, sans-serif" font-size="24" font-weight="700" letter-spacing="0">20-HOUR</text>
+    <text x="76" y="52" fill="#1D4ED8" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="700" letter-spacing="0">OWNER</text>
+  </g>
+</svg>
