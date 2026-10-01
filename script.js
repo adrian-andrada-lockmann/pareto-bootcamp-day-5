@@ -2,6 +2,28 @@ const header = document.querySelector("#site-header");
 const menuButton = document.querySelector(".menu-button");
 const mobileNav = document.querySelector("#mobile-nav");
 const mobileLinks = mobileNav.querySelectorAll("a");
+const embedTemplate = document.querySelector("#highlevel-embed");
+const embedHost = document.querySelector("#highlevel-form");
+
+if (embedHost && embedTemplate?.content.querySelector("iframe[src]")) {
+  const embed = embedTemplate.content.cloneNode(true);
+  const embedScripts = [...embed.querySelectorAll("script")];
+  embedScripts.forEach((script) => script.remove());
+  const iframe = embed.querySelector("iframe");
+  if (!iframe.hasAttribute("title")) iframe.title = "20-Hour Owner application";
+  embedHost.append(embed);
+  embedHost.hidden = false;
+  document.querySelector("#application-form")?.remove();
+
+  // Scripts inside a template are inert; create fresh elements for the vendor loader.
+  embedScripts.forEach((source) => {
+    const script = document.createElement("script");
+    [...source.attributes].forEach(({ name, value }) => script.setAttribute(name, value));
+    script.textContent = source.textContent;
+    embedHost.append(script);
+  });
+}
+
 const form = document.querySelector("#application-form");
 const formStatus = document.querySelector("#form-status");
 
@@ -38,7 +60,7 @@ if ("IntersectionObserver" in window) {
   revealItems.forEach((item) => item.classList.add("is-visible"));
 }
 
-form.addEventListener("submit", (event) => {
+form?.addEventListener("submit", (event) => {
   event.preventDefault();
   const requiredFields = [...form.querySelectorAll("[required]")];
   const invalidFields = requiredFields.filter((field) => !field.checkValidity());
@@ -58,10 +80,10 @@ form.addEventListener("submit", (event) => {
 
   const firstName = form.elements.name.value.trim().split(" ")[0];
   formStatus.classList.remove("is-error");
-  formStatus.textContent = `Thanks, ${firstName}. The preview captured your application locally. Connect a form endpoint before publishing.`;
+  formStatus.textContent = `Thanks, ${firstName}. This is a preview only. Your application has not been sent.`;
 });
 
-form.addEventListener("input", (event) => {
+form?.addEventListener("input", (event) => {
   if (event.target.matches("[required]")) {
     event.target.setAttribute("aria-invalid", "false");
   }
